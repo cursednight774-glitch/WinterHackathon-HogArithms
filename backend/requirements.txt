@@ -1,14 +1,17 @@
-fastapi
-uvicorn[standard]
+# --- Core API ---
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
 
-# Google AI
-google-cloud-aiplatform
+# --- Google Cloud / AI ---
+google-cloud-aiplatform==1.42.1
+google-generativeai==0.3.2
+google-cloud-firestore==2.14.0
 
-# Validation & scraping
-requests
-beautifulsoup4
-python-whois
+# --- Data & Validation ---
+requests==2.31.0
+beautifulsoup4==4.12.3
+python-whois==0.9.4
 
-# Utilities
-python-dotenv
-
+# --- Utilities ---
+python-dotenv==1.0.1
+pydantic==2.6.1
