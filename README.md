@@ -1,166 +1,58 @@
-#  Winter Hackathon - Repository Setup Guide
+Project Name
+Course and Job credibility system
 
-Welcome to the Winter Hackathon organized by **Sceptix** and **GDG SJEC**! To track your progress and collaborate effectively, every team must fork the official repository and follow the steps below.
+Description
+The product being developed checks if the course or job opening we're looking at is credible or not.
 
----
+Features
+.Credibility system
+.Easy access
+.Modularisation
 
-##  Fork the Repository
+Frontend (Browser Extension)
+Plasmo Framework – For rapid, cross-browser extension development.
 
-1. Go to the GitHub page: [https://github.com/gdgsjec/WinterHackathon-TEAM_NAME-](https://github.com/gdgsjec/WinterHackathon-TEAM_NAME-)
-2. Click on the **"Fork"** button in the upper-right corner of the page
-3. Assign the repository name as `WinterHackathon-<TeamName>`
-> 📝 **Note:** Please use **[PascalCase](https://pascal-case.com/)** for your team name.
+React & TypeScript – For building a responsive, type-safe user interface.
 
+Tailwind CSS – For styling the "Shield" overlay without CSS conflicts on host sites.
 
-**Example:**
-```
-Repository Name: WinterHackathon-BossBandit
-```
+Backend & Infrastructure
+Python (FastAPI) – High-performance async API to handle requests.
 
----
+Docker – Containerization for consistent deployment.
 
-##  Clone Your Forked Repository
+Redis – Caching scan results for millisecond latency.
 
-1. Go to your forked repository on GitHub
-2. Click the green **"Code"** button, then click the clipboard icon to copy the URL
-3. Open your terminal and run the following command to copy the repository to your local machine (replace `<repository-url>` with your forked repository URL):
+Google Technologies Used
+Google Vertex AI
 
-```bash
-git clone <repository-url>
-```
+ We use Gemini's advanced context window to analyze complex job descriptions and course syllabi.Allowing us to calculate a semantic "ROI Score" and detect subtle scam language patterns that rule-based systems miss.
 
----
+Google Cloud Run
 
-##  Start Working on Your Project
+To host our Python backend. We chose Cloud Run for its serverless architecture, allowing our API to scale instantly from zero to thousands of concurrent requests during high-traffic periods (like career fairs) while maintaining low latency.
 
-Begin building your solution! Collaborate with your teammates and push changes regularly.
+Google Web Risk API
 
----
-## Update the README (Mandatory)
+ To provide an instant "first line of defense." Before our AI even analyzes the text, this API checks the URL against Google's constantly updated index of over a million unsafe web resources, blocking known phishing and social engineering sites immediately.
 
-Before writing any code, replace the existing README.md with information specific to your project.
-Your README is the first thing mentors and judges will see, so make sure it clearly explains what you built and why.
-You can replace the README with the recommended template below and update the contents as you work on the project.
+Google Cloud Firestore
 
-### Recommended Format for README:
-Use the structure below:
-```
- # Project Name
+Used as our high-speed NoSQL database to store verified recruiter profiles and cache previous scan results. Its real-time capabilities allow us to sync the "Verified" status across all users instantly.
 
-## Description
-Briefly explain what your project does, the problem it solves, and who it is for.
+Google Custom Search JSON API
 
-# Demo Video Link: <insert Google Drive link to the demo video of the working of your project>
+To perform "Grounding" checks. We programmatically search the web to verify if a recruiter actually works at the company they claim to represent, without violating terms of service by scraping platforms like LinkedIn directly.
 
-## Features
-- Key feature 1
-- Key feature 2
-- Key feature 3
-
-## Tech Stack
-List the technologies, frameworks, and tools used in the project.
-
-## Google Technologies Used
-> ⚠️ Using Google products is **mandatory** for this hackathon.
-
-List the Google technologies you used and clearly explain **why** you chose them.
-
-**Example:**
-- **Firebase Authentication** – For secure and easy user authentication
-- **Firebase Firestore** – To store and manage real-time data
-- **Google Maps API** – To enable location-based features
-
-## Setup Instructions
+Setup Instructions
 Steps to run the project locally:
 1. Clone the repository
 2. Install dependencies
 3. Add environment variables (if any)
 4. Run the project
 
-## Team Members
-- Name 1
-- Name 2
-- Name 3
-```
-
-
-## Commit Your Changes
-
-Track and save your progress using Git:
-
-### Check the status of your changes
-```bash
-git status
-```
-
-### Stage your changes
-Use the `git add` command to stage the changes you want to commit:
-```bash
-git add .
-```
-
-### Commit with a meaningful message
-
-#### **Option 1: Simple Commit Format** (Beginner Friendly)
-Use this if you're new to Git:
-```bash
-git commit -m "Your descriptive commit message"
-```
-
-#### **Option 2: Conventional Commits** (Recommended)
-Follow this format for more structured, professional commit history:
-```bash
-git commit -m "<type>(<scope>): <subject>"
-```
-
-**Commit Types:**
-
-| Type | Purpose |
-|------|---------|
-| `feat` | For a new feature for the user, not a new feature for build script. Such commit will trigger a release bumping a MINOR version |
-| `fix` | For a bug fix for the user, not a fix to a build script. Such commit will trigger a release bumping a PATCH version |
-| `perf` | For performance improvements. Such commit will trigger a release bumping a PATCH version |
-| `docs` | For changes to the documentation |
-| `test` | For adding missing tests, refactoring tests; no production code change |
-| `style` | For formatting changes, missing semicolons, etc |
-| `refactor` | For refactoring production code, e.g. renaming a variable |
-| `build` | For updating build configuration, development tools or other changes irrelevant to the user |
-
-- **Scope:** Area of change (e.g., api, ui, auth)
-- **Subject:** One-line summary in present tense, no period at the end
-
-**Example:**
-```bash
-git commit -m "fix(button): fix submit button not working"
-```
-
----
-
-## Push Your Changes
-
-Send your local commits to GitHub:
-```bash
-git push origin
-```
-
----
-
-##  Tips for Success
-
-- **Commit often:** Small, frequent commits help track progress and fix bugs easily
-- **Write clear messages:** Describe what you did in each commit
-- **Collaborate:** Make sure everyone in your team contributes
-- **Stay organized:** Use branches for different features if needed
-- **Test regularly:** Ensure your code works before pushing
-
----
-
-##  Need Help?
-
-For any issues or doubts, reach out to the organizing team.
-
-**Happy Hacking!** ✨
-
----
-
-*Organized by Sceptix & GDG SJEC*  
+ Team Members
+- Raahil Ibrahim
+- Milind Manoj Naik
+- Taahir Abdulla
+- Asher Pinto
