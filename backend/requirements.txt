@@ -1,1 +1,14 @@
+fastapi
+uvicorn[standard]
+
+# Google AI
+google-cloud-aiplatform
+
+# Validation & scraping
+requests
+beautifulsoup4
+python-whois
+
+# Utilities
+python-dotenv
 
